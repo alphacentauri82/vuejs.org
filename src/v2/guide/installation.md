@@ -91,12 +91,12 @@ En el [directorio `dist/` del paquete NPM](https://cdn.jsdelivr.net/npm/vue/dist
 Si necesita compilar _templates_ en tiempo real en el cliente (por ejemplo: pasando un _String_ en la opción `template`, o usando elementos preexistentes en el DOM a través del HTML como _template_), necesitará el compilador y por lo tanto la distribución completa:
 
 ``` js
-// this requires the compiler
+// esto requiere el compilador
 new Vue({
   template: '<div>{{ hi }}</div>'
 })
 
-// this does not
+// esto no
 new Vue({
   render (h) {
     return h('div', this.hi)
@@ -115,7 +115,7 @@ module.exports = {
   // ...
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+      'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' para webpack 1
     }
   }
 }
@@ -247,7 +247,7 @@ npm run build
 Solo las compilaciones UMD están disponibles en Bower.
 
 ``` bash
-# latest stable
+# última versión estable
 $ bower install vue
 ```
 

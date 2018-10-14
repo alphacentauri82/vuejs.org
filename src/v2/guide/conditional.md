@@ -9,7 +9,7 @@ order: 7
 En los _string templates_, como por ejemplo, Handlebars, escribiríamos un bloque condicional como este:
 
 ``` html
-<!-- Handlebars template -->
+<!-- template de Handlebars -->
 {{#if ok}}
   <h1>Sí</h1>
 {{/if}}

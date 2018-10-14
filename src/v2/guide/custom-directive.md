@@ -27,11 +27,11 @@ new Vue({
 Cuando se carga la página, este elemento se enfoca (nota: el atributo nativo `autofocus` no funciona en Safari para dispositivos mobiles). De hecho, si no ha hecho clic en nada más desde que visitó esta página, el _input_ de arriba debería estar enfocada ahora. Ahora vamos a construir la directiva que realiza esto:
 
 ``` js
-// Register a global custom directive called `v-focus`
+// Registra una directiva personalizada global llamada `v-focus`
 Vue.directive('focus', {
-  // When the bound element is inserted into the DOM...
+  // Cuando el elemento enlazado se inserta en el DOM...
   inserted: function (el) {
-    // Focus the element
+    // Enfoca el elemento
     el.focus()
   }
 })
@@ -42,7 +42,7 @@ Si desea registrar una directiva localmente en lugar de lo anterior, los compone
 ``` js
 directives: {
   focus: {
-    // directive definition
+    // Definición de directiva
     inserted: function (el) {
       el.focus()
     }
