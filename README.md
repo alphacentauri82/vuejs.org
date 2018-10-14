@@ -72,9 +72,9 @@ Russian translation is maintained by Translation Gang.
 
 ### Spanish
 
-Spanish translation is maintained by Diana Rodriguez and The Vue.js community in Uruguay.
+Spanish translation is maintained by Diana Rodriguez and The Vue.js Montevideo Meetup (by 1950Labs)
 
-* Translation Repo - [/alphacentauri82/vuejs.org](https://github.com/alphacentauri82/vuejs.org)
+* Translation Repo - [/1950Labs/vuejs.org](https://github.com/1950Labs/vuejs.org)
 
 ### Vietnamese
 
