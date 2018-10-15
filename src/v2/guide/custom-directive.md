@@ -56,25 +56,25 @@ Luego, en un _template_, puede usar el nuevo atributo `v-focus` en cualquier ele
 <input v-focus>
 ```
 
-## Funciones Disparadoras
+## Funciones Hook
 
-Un objeto de definición de directiva puede proveer algunas funciones disparadoras (_Hooks_ en inglés), todas opcionales:
+Un objeto de definición de directiva puede proveer algunas funciones _hook_, todas opcionales:
 
 - `bind`: se llama solo una vez, cuando la directiva se enlaza por primera vez con el elemento. Aquí es donde puede hacer un trabajo de configuración inicial.
 
 - `inserted`: se llama cuando el elemento enlazado se ha insertado en el nodo padre (esto solo garantiza la presencia en el nodo padre, no necesariamente en el documento).
 
-- `update`: se llama después de actualizar el VNode que contiene el componente, __pero posiblemente antes de la actualización de sus hijos__. El valor de la directiva puede o no haber cambiado, pero usted puede evitar actualizaciones innecesarias comparando los valores actuales con los antiguos (ver abajo, en argumentos en disparadores).
+- `update`: se llama después de actualizar el VNode que contiene el componente, __pero posiblemente antes de la actualización de sus hijos__. El valor de la directiva puede o no haber cambiado, pero usted puede evitar actualizaciones innecesarias comparando los valores actuales con los antiguos (ver abajo, en argumentos en _hooks_).
 
 - `componentUpdated`: se llama después de que el VNodo del componente que contiene __y los VNodos de sus hijos__ se han actualizado.
 
 - `unbind`: se llama solo una vez, cuando la directiva es desvinculada del elemento.
 
-Exploraremos los argumentos pasados en estas funciones disparadoras (`el`, `binding`, `vnode`, and `oldVnode`) en la siguiente sección.
+Exploraremos los argumentos pasados en estas funciones _hook_ (`el`, `binding`, `vnode`, and `oldVnode`) en la siguiente sección.
 
-## Argumentos en Disparadores
+## Argumentos en Hooks
 
-Los siguientes argumentos se esperan en las funciones de disparadores de directivas:
+Los siguientes argumentos se esperan en las funciones de _hook_ de directivas:
 
 - `el`: El elemento al que está dirigida la directiva. Esto se puede utilizar para manipular directamente el DOM.
 - `binding`: Un objeto que contiene las siguientes propiedades.
@@ -87,7 +87,7 @@ Los siguientes argumentos se esperan en las funciones de disparadores de directi
 - `vnode`: El nodo virtual producido por el compilador de Vue. Ver el [VNode API](../api/#VNode-Interface) para más detalles.
 - `oldVnode`: El nodo virtual anterior, solo disponible en `update` y `componentUpdated`.
 
-<p class="tip">Excepto `el`, usted debe tratar los otros argumentos como de sólo lectura y nunca modificarlos. Si necesita compartir información entre disparadores, es aconsejable utilizar un atributo [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset).</p>
+<p class="tip">Excepto `el`, usted debe tratar los otros argumentos como de sólo lectura y nunca modificarlos. Si necesita compartir información entre _hooks_, es aconsejable utilizar un atributo [dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset).</p>
 
 Un ejemplo de una directiva personalizada que usa algunas de estas propiedades:
 
@@ -143,7 +143,7 @@ new Vue({
 
 ## Forma Abreviada de Funciones
 
-En muchos casos, es posible que desee el mismo comportamiento en `bind` y `update`, pero no se preocupe por los otros disparadores. Por ejemplo:
+En muchos casos, es posible que desee el mismo comportamiento en `bind` y `update`, pero no se preocupe por los otros _hooks_. Por ejemplo:
 
 ``` js
 Vue.directive('color-swatch', function (el, binding) {

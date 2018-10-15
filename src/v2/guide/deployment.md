@@ -127,4 +127,4 @@ Acceda a la documentación de la respectiva herramienta de compilación para ver
 
 ## Seguimiento de Errores en Tiempo de Ejecución
 
-Si se produce un error en tiempo de ejecución durante el procesamiento de un componente, se pasará a la función de configuración global `Vue.config.errorHandler` si así fue configurado. Podría ser una buena idea aprovechar este disparador junto con un servicio de seguimiento de errores como [Sentry](https://sentry.io), que proporciona [una integración oficial](https://sentry.io/for/vue/) para Vue.
+Si se produce un error en tiempo de ejecución durante el procesamiento de un componente, se pasará a la función de configuración global `Vue.config.errorHandler` si así fue configurado. Podría ser una buena idea aprovechar este _hook_ junto con un servicio de seguimiento de errores como [Sentry](https://sentry.io), que proporciona [una integración oficial](https://sentry.io/for/vue/) para Vue.
