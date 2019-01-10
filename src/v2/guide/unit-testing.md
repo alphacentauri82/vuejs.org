@@ -4,13 +4,13 @@ type: guide
 order: 403
 ---
 
-## Setup and Tooling
+## Instalación y herramientas
 
-Anything compatible with a module-based build system will work, but if you're looking for a specific recommendation try the [Karma](http://karma-runner.github.io) test runner. It has a lot of community plugins, including support for [Webpack](https://github.com/webpack/karma-webpack) and [Browserify](https://github.com/Nikku/karma-browserify). For detailed setup please refer to each project's respective documentation. These example Karma configurations for [Webpack](https://github.com/vuejs-templates/webpack/blob/master/template/test/unit/karma.conf.js) and [Browserify](https://github.com/vuejs-templates/browserify/blob/master/template/karma.conf.js) can help you get started.
+Cualquier cosa compatibl con un sistema de construcción basado en módulos funcionará, pero si usted esta buscando una recomendación específica puede [Karma](http://karma-runner.github.io). Este tiene una comunidad con muchos plugins, incluyendo soporte para  [Webpack](https://github.com/webpack/karma-webpack) y [Browserify](https://github.com/Nikku/karma-browserify). Para una instalación detallada por favor vea la documentación respectiva a cada proyecto. Este es un ejemplo de configuración de Karma para [Webpack](https://github.com/vuejs-templates/webpack/blob/master/template/test/unit/karma.conf.js) y [Browserify](https://github.com/vuejs-templates/browserify/blob/master/template/karma.conf.js) que puede ayudarle a comenzar.
 
-## Simple Assertions
+## Asersiones simples
 
-You don't have to do anything special in your components to make them testable. Export the raw options:
+Usted no tiene que hacer nada especial en sus componentes para hacerlos testeables. ExporteYou don't have to do anything special in your components to make them testable. Exporte las opciones tal cual:
 
 ``` html
 <template>
@@ -31,7 +31,7 @@ You don't have to do anything special in your components to make them testable. 
 </script>
 ```
 
-Then import the component options along with Vue, and you can make many common assertions:
+Entonces importe las opciones del componente junto con Vue, y usted prodrá hacer muchas asersiones comunes:
 
 ``` js
 // Import Vue and the component being tested
@@ -69,9 +69,9 @@ describe('MyComponent', () => {
 })
 ```
 
-## Writing Testable Components
+## Escribiendo Componentes Testeables
 
-A component's render output is primarily determined by the props they receive. If a component's render output solely depends on its props it becomes straightforward to test, similar to asserting the return value of a pure function with different arguments. Take a simplified example:
+El resultado de la renderización de un componente es determinado principalmente por las propiedades que recibe. Si el resultado de la renderización de un componente depende unicamente de sus accesorios, se vuelve sencillo de probar, similar a asertar el valor de retorno de una función pura con diferentes argumentos. Tomemos un ejemplo simplificado:
 
 ``` html
 <template>
@@ -85,7 +85,7 @@ A component's render output is primarily determined by the props they receive. I
 </script>
 ```
 
-You can assert its render output with different props using the `propsData` option:
+Usted puede afirmar el resultado del renderizado con diferentes props usando la opción `propsData`:
 
 ``` js
 import Vue from 'vue'
@@ -111,9 +111,9 @@ describe('MyComponent', () => {
 })
 ```
 
-## Asserting Asynchronous Updates
+## Asertaciones de Aactualizaciones Asincrónicas
 
-Since Vue [performs DOM updates asynchronously](reactivity.html#Async-Update-Queue), assertions on DOM updates resulting from state change will have to be made in a `Vue.nextTick` callback:
+Como Vue [realiza actualizaciones asincrónicas del DOM](reactivity.html#Async-Update-Queue), las afirmaciones sobre las actualizaciones de DOM resultantes del cambio de estado deberán realizarse en una devolución de llamada `Vue.nextTick`:
 
 ``` js
 // Inspect the generated HTML after a state update
@@ -129,6 +129,6 @@ it('updates the rendered message when vm.message updates', done => {
 })
 ```
 
-We are planning to work on a collection of common test helpers to make it easier to render components with different constraints (e.g. shallow rendering that ignores child components) and assert their output.
+Planeamos trabajar en una coleccion de helpers comunes para testing para hacer esto más simple en el renderizado de componentes con diferentes restricciones (ejemplo. una representación superficial que ignora componentes secundarios) y asertar su resultado.
 
-For more in-depth information on unit testing in Vue, check out [vue-test-utils](https://vue-test-utils.vuejs.org/) and our cookbook entry about [unit testing vue components](https://vuejs.org/v2/cookbook/unit-testing-vue-components.html).
+Para información más detallada sobre testing unitario en Vue, visite [vue-test-utils](https://vue-test-utils.vuejs.org/) y nuestra publicación de cookbook [testing unitario con componentes Vue](https://vuejs.org/v2/cookbook/unit-testing-vue-components.html).
